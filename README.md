@@ -135,7 +135,10 @@ with Packer.
 
   ```bash
   sudo apt update
-  sudo apt install -y ansible curl git jq libc6-dev libvirt-daemon-system libvirt-dev python3-winrm qemu-kvm sshpass virtualbox
+  sudo apt install -y \
+  ansible curl git jq libc6-dev libvirt-daemon-system libvirt-dev python3-winrm qemu-kvm sshpass \
+  apt-get install libxslt-dev libxml2-dev libvirt-dev zlib1g-dev \
+  virtualbox
 
   PACKER_LATEST_VERSION="$(curl -s https://checkpoint-api.hashicorp.com/v1/check/packer | jq -r -M '.current_version')"
   curl "https://releases.hashicorp.com/packer/${PACKER_LATEST_VERSION}/packer_${PACKER_LATEST_VERSION}_linux_amd64.zip" --output /tmp/packer_linux_amd64.zip
